@@ -1,5 +1,6 @@
-const cvs = document.getElementById('canvas')
+//
 
+const cvs = document.getElementById('snake')
 const ctx = cvs.getContext('2d')
 
 //unidade
@@ -28,6 +29,29 @@ let lampada = {
 //score
 let = score = 0;
 
+//controlar a cobra
+
+let d;
+
+document.addEventListener("keydown",direction);
+
+function direction(event){
+    let key = event.keyCode;
+    if( key == 37 && d != "RIGHT"){
+        left.play();
+        d = "LEFT";
+    } else if (key == 38 && d != "DOWN"){
+        d= "UP";
+        up.play();
+    } else if (key == 39 && d != "LEFT"){
+        d = "RIGHT";
+        right.play();
+    } else if (key == 40 && d != "UP"){
+        d = "DOWN";
+        down.play();
+    }
+}
+
 // draw  
 function draw(){
     ctx.drawImage(fundo,0,0);
@@ -48,4 +72,4 @@ ctx.drawImage(lampadaImg, lampada.x, lampada.y);
 
 
 
-let game = setInterval (draw, 100);
+let game = setInterval (draw,100);
