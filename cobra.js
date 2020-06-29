@@ -88,10 +88,10 @@ function draw(){
     ctx.drawImage(ground,0,0);
     
     for( let i = 0; i < snake.length ; i++){
-        ctx.fillStyle = ( i == 0 ) ? "green" : "white";
+        ctx.fillStyle = ( i == 0 ) ? "blue" : "white";
         ctx.fillRect(snake[i].x,snake[i].y, box, box);
         
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "purple";
         ctx.strokeRect(snake[i].x, snake[i].y, box, box);
     }
     
